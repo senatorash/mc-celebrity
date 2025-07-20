@@ -1,0 +1,68 @@
+.ContactContent {
+  margin-bottom: 20px;
+}
+.ContactContent h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.ContactContent p {
+  font-size: 16px;
+  font-weight: 400;
+  color: gray;
+}
+
+.ContactInfo {
+  gap: 10px;
+  padding: 20px;
+  width: 60%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.ContactInfo:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ContactInfo i {
+  font-size: 1.9rem !important;
+  color: #026dfd;
+  background-color: white;
+  padding: 3px 12px;
+  border-radius: 10px;
+}
+
+.ContactInfo:hover i {
+  color: #fff;
+  background-color: #026dfd;
+}
+
+.ContactInfo P {
+  font-size: 14px;
+  font-weight: 400;
+  color: gray;
+}
+
+.ContactInfo h6 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.SocialLink {
+  font-size: 2rem;
+  color: #026dfd;
+  padding: 3px 12px;
+}
+
+.SocialLink:hover {
+  color: #fff;
+  background-color: #026dfd;
+  border-radius: 10px;
+}
+
+/* Contact Form styling */
+.ContactForm p {
+  font-size: 16px;
+  font-weight: 400;
+  color: gray;
+}
