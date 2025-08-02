@@ -1,15 +1,62 @@
+.Contact_text h4 {
+  display: inline-block;
+  margin: 0 30px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.Contact_text h4::before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  top: 8px;
+  right: 137px;
+  left: -30px;
+  background: #026dfd;
+  z-index: -1;
+}
+
+.Contact_text h4::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  top: 8px;
+  left: 3px;
+  background: #026dfd;
+  z-index: 1;
+}
+
+.Contact_text h2 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #414141;
+}
+
+@media (max-width: 768px) {
+  .Contact_text h2 {
+    font-size: 27px;
+  }
+}
+
 .ContactContent {
   margin-bottom: 20px;
 }
 .ContactContent h3 {
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .ContactContent p {
   font-size: 16px;
   font-weight: 400;
-  color: gray;
+  color: #414141;
 }
 
 .ContactInfo {
@@ -40,7 +87,7 @@
 .ContactInfo P {
   font-size: 14px;
   font-weight: 400;
-  color: gray;
+  color: #414141;
 }
 
 .ContactInfo h6 {
@@ -64,5 +111,64 @@
 .ContactForm p {
   font-size: 16px;
   font-weight: 400;
-  color: gray;
+  color: #414141;
+}
+
+.input_field {
+  position: relative;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #026dfd;
+}
+
+.input_field input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.input_field textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.input_field input:focus,
+.input_field textarea:focus {
+  background: transparent;
+  /* border-bottom: 2px solid #0056b3; Highlight on focus */
+  outline: none;
+  box-shadow: none;
+}
+
+.ContactButton {
+  padding: 12px 50px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: #026dfd;
+  border: 2px solid transparent;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 50px #026dfd;
+  transition: ease-out 0.3s;
+  -webkit-transition: ease-out 0.3s;
+  -moz-transition: ease-out 0.3s;
+}
+
+.ContactButton:hover {
+  color: #026dfd;
+  background: transparent;
+  box-shadow: inset 0 0 0 0 #026dfd;
+  border-color: #026dfd;
 }

@@ -43,6 +43,13 @@
   font-weight: 700;
   color: #414141;
 }
+
+@media (max-width: 768px) {
+  .ServiceContent h2 {
+    font-size: 27px;
+  }
+}
+
 .ServiceCard {
   position: relative;
   color: #000;

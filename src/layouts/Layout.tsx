@@ -1,15 +1,24 @@
+import { useEffect, useState } from "react";
 import NavBar from "./NavBar";
-import HeroSection from "../components/HeroSection";
 import AppRoutes from "./AppRoutes";
 import Footer from "./Footer";
-import classes from "../assets/styles/Layout.module.css";
+import BackToTop from "../components/UI/BackToTop";
+import Loader from "../components/UI/Loader";
 
 const Layout = () => {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  });
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
-      <header className={classes.header}>
+      <header>
         <NavBar />
-        <HeroSection />
       </header>
 
       <main>
@@ -18,6 +27,8 @@ const Layout = () => {
       <footer>
         <Footer />
       </footer>
+
+      <BackToTop />
     </>
   );
 };

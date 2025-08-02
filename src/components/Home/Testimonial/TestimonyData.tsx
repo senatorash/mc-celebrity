@@ -1,4 +1,4 @@
-import img from "../../assets/logo.png";
+import img from "../../../assets/images/logo.png";
 const TestimonyData = [
   {
     id: 1,

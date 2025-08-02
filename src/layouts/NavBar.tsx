@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link } from "react-scroll";
+import logo from "../assets/images/logo.png";
 
 const NavBar = () => {
   const [sticky, setSticky] = useState(false);
   const [showBar, setShowBar] = useState(false);
   const [responsive, setResponsive] = useState(false);
+
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const handleResponsive = () => {
     if (window.innerWidth < 820) {
@@ -33,11 +37,14 @@ const NavBar = () => {
         btnElement.style.color = "#000";
       }
 
-      linkElements.forEach((link) => {
-        if (link instanceof HTMLElement) {
-          link.style.color = "#000";
-        }
-      });
+      {
+        !responsive &&
+          linkElements.forEach((link) => {
+            if (link instanceof HTMLElement) {
+              link.style.color = "#000";
+            }
+          });
+      }
     } else {
       setSticky(false);
       const element = document.querySelector(".navbar .right-btns .btn");
@@ -63,20 +70,11 @@ const NavBar = () => {
     };
   });
 
-  // useEffect(() => {
-  //   if (showBar) {
-  //     document.body.style = "overflow: hidden";
-  //   }
-
-  //   return () => {
-  //     document.body.style = "overflow: auto";
-  //   };
-  // }, [showBar]);
-
   return (
-    <nav className={sticky ? "navbar sticky" : "navbar"}>
+    // <Element name="home" id="home">
+    <nav className={`navbar ${sticky ? "sticky" : ""}`}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="home" smooth={true} duration={500}>
           <img src={logo} alt="master_of_ceremony_logo" />
         </Link>
         <ul
@@ -94,32 +92,110 @@ const NavBar = () => {
             </button>
           ) : null}
           <li className="navbar-item" onClick={() => setShowBar(false)}>
-            <Link className="navbar-link" to="/">
-              Home
-            </Link>
+            {isHomePage ? (
+              <Link
+                activeClass="active"
+                className="navbar-link"
+                to="home"
+                smooth={true}
+                duration={500}
+                offset={-100}
+                spy={true}
+              >
+                Home
+              </Link>
+            ) : (
+              <RouterLink className="navbar-link" to="/">
+                Home
+              </RouterLink>
+            )}
           </li>
           <li className="navbar-item" onClick={() => setShowBar(false)}>
-            <Link className="navbar-link" to="/">
-              About
-            </Link>
+            {isHomePage ? (
+              <Link
+                activeClass="active"
+                className="navbar-link"
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                spy={true}
+                onSetActive={() => setShowBar(false)}
+              >
+                About
+              </Link>
+            ) : (
+              <RouterLink className="navbar-link" to="/#about">
+                About
+              </RouterLink>
+            )}
           </li>
 
           <li className="navbar-item" onClick={() => setShowBar(false)}>
-            <Link className="navbar-link" to="/">
-              Services
-            </Link>
+            {isHomePage ? (
+              <Link
+                className="navbar-link"
+                to="services"
+                smooth={true}
+                duration={500}
+                offset={-100}
+                spy={true}
+                onSetActive={() => setShowBar(false)}
+              >
+                Services
+              </Link>
+            ) : (
+              <RouterLink className="navbar-link" to="/#services">
+                Services
+              </RouterLink>
+            )}
           </li>
 
           <li className="navbar-item" onClick={() => setShowBar(false)}>
-            <Link className="navbar-link" to="/">
-              Testimonials
-            </Link>
+            {isHomePage ? (
+              <Link
+                className="navbar-link"
+                to="testimonials"
+                smooth={true}
+                duration={500}
+                offset={-100}
+                spy={true}
+                activeClass="active"
+                onSetActive={() => setShowBar(false)}
+              >
+                Testimonials
+              </Link>
+            ) : (
+              <RouterLink className="navbar-link" to="/#testimonials">
+                Testimonials
+              </RouterLink>
+            )}
           </li>
 
           <li className="navbar-item" onClick={() => setShowBar(false)}>
-            <Link className="navbar-link" to="/">
-              Contact
-            </Link>
+            {isHomePage ? (
+              <Link
+                className="navbar-link"
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-100}
+                spy={true}
+                onSetActive={() => setShowBar(false)}
+              >
+                Contact
+              </Link>
+            ) : (
+              <RouterLink className="navbar-link" to="/#contact">
+                Contact
+              </RouterLink>
+            )}
+          </li>
+
+          <li className="navbar-item" onClick={() => setShowBar(false)}>
+            <RouterLink className="navbar-link" to="/book">
+              Book
+            </RouterLink>
           </li>
         </ul>
         {responsive ? (
@@ -134,6 +210,7 @@ const NavBar = () => {
         ) : null}
       </div>
     </nav>
+    // </Element>
   );
 };
 

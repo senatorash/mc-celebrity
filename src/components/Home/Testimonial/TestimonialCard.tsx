@@ -1,4 +1,4 @@
-import classes from "../../assets/styles/Testimonial.module.css";
+import classes from "../../../assets/styles/Testimonial.module.css";
 interface TestimonialProps {
   TestimonialName: string;
   image: string;
