@@ -10,7 +10,7 @@ const Error404 = () => {
         <p className="text-center">
           The page you are looking for does not exist.
         </p>
-        <div>
+        <div className="d-flex justify-content-center">
           <Link to="/" className={classes.ErrorBtn}>
             Back Home
           </Link>

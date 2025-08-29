@@ -8,7 +8,6 @@
   min-height: 115vh;
   align-items: center;
   /* justify-content: center; */
-
   display: flex;
 }
 
@@ -41,6 +40,17 @@
   font-size: 48px;
   font-weight: 900;
   /* line-height: 58px; */
+}
+
+@media (max-width: 768px) {
+  .HeroContent h1 {
+    font-size: 40px;
+  }
+
+  .HeroContent h4 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
 }
 
 .HeroContainer span {

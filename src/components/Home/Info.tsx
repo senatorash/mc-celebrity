@@ -29,29 +29,41 @@ const Info = () => {
                 one show.
               </p>
               <div className={``}>
-                <Link to="#" className={`${classes.SocialLinks}`}>
+                <Link
+                  to="https://www.facebook.com/share/172Y5e3Mp3/?mibextid=wwXIfr"
+                  className={`${classes.SocialLinks}`}
+                >
                   <i className="ri-facebook-fill"></i>
                 </Link>
 
-                <Link to="#" className={`${classes.SocialLinks}`}>
-                  <i className="ri-instagram-line"></i>
+                <Link
+                  to="https://www.instagram.com/mccelebrity?igsh=MXRvcnNqajd4cXB1cg%3D%3D&utm_source=qr"
+                  className={`${classes.Social_link12}`}
+                >
+                  <i className="ri-instagram-fill"></i>
                 </Link>
 
-                <Link to="#" className={`${classes.SocialLinks}`}>
-                  <i className="ri-twitter-line"></i>
+                <Link
+                  to="https://x.com/iammccelebrity?s=21&t=fi3v8gvXq-_k0j2587tyng"
+                  className={`${classes.Social_link11}`}
+                >
+                  <i className="ri-twitter-x-fill"></i>
                 </Link>
 
-                {/* <Link to="#" className={`${classes.SocialLinks}`}>
-                <i className="ri-linkedin-box-line"></i>
-              </Link> */}
-                <Link to="#" className={`${classes.SocialLinks}`}>
-                  <i className="ri-youtube-line"></i>
+                <Link
+                  to="https://www.tiktok.com/@mccelebrity23?_t=ZS-8yvEgKFXLWO&_r=1"
+                  className={`${classes.Social_link11}`}
+                >
+                  <i className="ri-tiktok-line"></i>
+                </Link>
+                <Link to="#" className={`${classes.Social_link2}`}>
+                  <i className="ri-youtube-fill"></i>
                 </Link>
               </div>
             </div>
 
             <div className="col-md-6 col-lg-4 mb-2">
-              <h4 className="mb-4">Newsletter</h4>
+              <h4 className="mb-5">Newsletter</h4>
               <form>
                 <div className={`${classes.input_field} form-group mb-3`}>
                   <input

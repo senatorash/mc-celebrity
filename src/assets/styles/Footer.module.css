@@ -7,18 +7,72 @@
 } */
 
 .SocialLinks {
-  margin-right: 20px;
+  margin-right: 10px;
   /* margin-left: -10px; */
   padding: 5px 10px;
   font-size: 1.3rem;
   border-radius: 100%;
-  color: #026dfd;
+  color: #000;
   background-color: #ededee;
 }
 
 .SocialLinks:hover {
-  color: #ededee;
-  background-color: #026dfd;
+  color: #3b5998;
+  background-color: #000;
+}
+
+.Social_link11 {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 1.3rem;
+  border-radius: 100%;
+  color: #000;
+  transition: all 0.4s ease-in-out;
+  background-color: #ededee;
+}
+
+.Social_link11:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.Social_link12 {
+  margin-right: 10px;
+  padding: 5px 10px;
+  color: #000;
+  font-size: 1.3rem;
+  background-color: #ededee;
+  border: none;
+  border-radius: 100%;
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.Social_link12:hover {
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+  color: white;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .Social_link1 {
@@ -26,6 +80,7 @@
   font-size: 1.3rem;
   border-radius: 100%;
   color: #000;
+  transition: all 0.4s ease-in-out;
   background-color: #ededee;
 }
 
@@ -39,6 +94,7 @@
   font-size: 1.3rem;
   border-radius: 100%;
   color: #000;
+  transition: all 0.4s ease-in-out;
   background-color: #ededee;
 }
 
@@ -52,6 +108,7 @@
   font-size: 1.3rem;
   border-radius: 100%;
   color: #000;
+  transition: all 0.4s ease-in-out;
   background-color: #ededee;
 }
 

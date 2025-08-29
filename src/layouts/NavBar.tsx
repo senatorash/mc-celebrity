@@ -74,9 +74,15 @@ const NavBar = () => {
     // <Element name="home" id="home">
     <nav className={`navbar ${sticky ? "sticky" : ""}`}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="home" smooth={true} duration={500}>
-          <img src={logo} alt="master_of_ceremony_logo" />
-        </Link>
+        {isHomePage ? (
+          <Link className="navbar-brand" to="home" smooth={true} duration={500}>
+            <img src={logo} alt="master_of_ceremony_logo" />
+          </Link>
+        ) : (
+          <RouterLink className="navbar-brand" to="/">
+            <img src={logo} alt="master_of_ceremony_logo" />
+          </RouterLink>
+        )}
         <ul
           className={
             responsive

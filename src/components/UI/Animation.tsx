@@ -66,15 +66,13 @@ const Animation = ({ children, direction = "left" }: TestingProps) => {
       return {
         from: getFrom(direction),
         to: getTo(direction),
-        config: { duration: 500 },
-        //   delay,
-        // reverse: toggle,
-        reset: true,
+        config: { duration: 500, tension: 200, friction: 240 },
+        reset: false,
       };
+    },
+    {
+      amount: 0.35,
     }
-    // {
-    //   amount: 0.4,
-    // }
   );
 
   return (

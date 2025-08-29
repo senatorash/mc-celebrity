@@ -13,21 +13,18 @@ const Layout = () => {
       setIsLoading(false);
     }, 3000);
   });
-  return isLoading ? (
-    <Loader />
-  ) : (
+  if (isLoading) return <Loader />;
+  return (
     <>
       <header>
         <NavBar />
       </header>
-
       <main>
         <AppRoutes />
       </main>
       <footer>
         <Footer />
       </footer>
-
       <BackToTop />
     </>
   );

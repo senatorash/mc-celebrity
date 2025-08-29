@@ -1,18 +1,17 @@
 .ErrorContainer {
-  /* background: linear-gradient(to bottom, #0149b3, #026dfd); */
-  background: linear-gradient(to bottom, #000814 0%, #012452 20%, #026dfd 100%);
-
-  /* background: #026dfd; */
-  height: 115vh;
-  color: #eedeee;
-  display: flex;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../images/4848369.jpg) no-repeat center center fixed;
+  background-size: cover;
+  /* width: 100%; */
+  min-height: 115vh;
+  align-items: center;
   justify-content: center;
   align-items: center;
   text-align: center;
+  display: flex;
 }
 
 .ErrorBtn {
-  /* border-radius: 30px; */
   width: 100%;
   padding: 12px;
   font-size: 14px;
