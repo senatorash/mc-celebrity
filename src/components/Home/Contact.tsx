@@ -130,15 +130,24 @@ const Contact = () => {
               </>
               {/* <div> */}
               <div className="mb-3 text-sm-start text-md-start text-lg-start ">
-                <Link to="#" className={`${classes.SocialLink}`}>
+                <Link
+                  to="https://www.facebook.com/share/172Y5e3Mp3/?mibextid=wwXIfr"
+                  className={`${classes.SocialLink}`}
+                >
                   <i className="ri-facebook-fill"></i>
                 </Link>
 
-                <Link to="#" className={`${classes.SocialLink}`}>
+                <Link
+                  to="https://www.instagram.com/mccelebrity?igsh=MXRvcnNqajd4cXB1cg%3D%3D&utm_source=qr"
+                  className={`${classes.SocialLink}`}
+                >
                   <i className="ri-instagram-line"></i>
                 </Link>
 
-                <Link to="#" className={`${classes.SocialLink}`}>
+                <Link
+                  to="https://x.com/iammccelebrity?s=21&t=fi3v8gvXq-_k0j2587tyng"
+                  className={`${classes.SocialLink}`}
+                >
                   <i className="ri-twitter-x-line"></i>
                 </Link>
 
@@ -146,7 +155,10 @@ const Contact = () => {
                   <i className="ri-youtube-line"></i>
                 </Link>
 
-                <Link to="#" className={`${classes.SocialLink}`}>
+                <Link
+                  to="https://www.tiktok.com/@mccelebrity23?_t=ZS-8yvEgKFXLWO&_r=1"
+                  className={`${classes.SocialLink}`}
+                >
                   <i className="ri-tiktok-line"></i>
                 </Link>
               </div>
