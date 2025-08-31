@@ -4,14 +4,11 @@
     url(../images/4848369.jpg) no-repeat center center fixed;
   background-size: cover;
   width: 100%;
-  min-height: 115vh;
+  min-height: 150vh;
+  justify-content: end;
   align-items: center;
   display: flex;
 }
-
-/* form {
-  margin-top: 100px;
-} */
 
 .formContainer {
   background: #ededee !important;

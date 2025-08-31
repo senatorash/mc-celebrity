@@ -21,7 +21,7 @@ const HeroSection = () => {
           <div className={`${classes.HeroButtons} d-flex`}>
             <div className={classes.hero_btn1}>
               <Link
-                to="mailto:TheCelebrityBrand@gmail.com"
+                to="https://formsubmit.co/el/xezife"
                 style={{ padding: "12px 25px" }}
               >
                 EMAIL

@@ -1,13 +1,17 @@
-// import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdAppRegistration } from "react-icons/md";
 import classes from "../assets/styles/Book.module.css";
 import logo from "../assets/images/logo.png";
+import { FormSubmit } from "../lib/apis/FormSubmit";
 import useFormValidation from "../hooks/useFormValidation";
+import Success from "../components/commons/Success";
+import Error from "../components/commons/Error";
 import SEO from "../SEO/SEO";
 
-const formUrl = import.meta.env.VITE_FORM_URL;
-
 const Book = () => {
+  const [isSuccess, setIsSuccess] = useState("");
+  const [isError, setIsError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const {
     email,
     setEmail,
@@ -17,20 +21,57 @@ const Book = () => {
     phoneNumberError,
     name,
     setName,
+    nameError,
+    location,
+    setLocation,
+    locationError,
     eventType,
     setEventType,
+    // eventTypeError,
+    validateBookingForm,
+    resetForm,
   } = useFormValidation();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    // perform validation
-    if (!email || !phoneNumber || !name || !eventType) {
-      event.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
+    setIsLoading(true);
+    const formData = {
+      email,
+      phoneNumber,
+      name,
+      location,
+      eventType,
+      _honey: "",
+      _blacklist: "viagra, click here, free money, buy now, crypto",
+      _subject: "New Booking Request from MC Celebrity Website",
+    };
+    if (!validateBookingForm()) {
+      setIsError("Some fields need your attention before submitting.");
+      setIsLoading(false);
       return;
     }
 
-    // allow the form to submit normally if everything is fine
+    const result = await FormSubmit(formData);
+    if (result?.success) {
+      setIsSuccess(result.message);
+      resetForm();
+      setIsLoading(false);
+    } else {
+      setIsError("An error occurred. Please try again.");
+      setIsLoading(false);
+    }
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      const timer = setTimeout(() => {
+        setIsSuccess("");
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isSuccess]);
 
   return (
     <>
@@ -48,21 +89,10 @@ const Book = () => {
         className={`container-fluid vh-100 text-black ${classes.book_section}`}
       >
         <form
-          style={{ marginTop: "100px" }}
+          style={{ marginTop: "100px", justifyContent: "center" }}
           className="container"
-          action={formUrl}
-          method="POST"
           onSubmit={handleSubmit}
         >
-          {/* disable captcha */}
-          <input type="hidden" name="_captcha" value="false" />
-          {/* optional: redirect after submit */}
-          {/* <input
-          type="hidden"
-          name="_next"
-          value="http://localhost:5173/thank-you"
-        /> */}
-
           <div className={`row ${classes.formContainer} `}>
             <div className="col-lg-6 col-md-6">
               <div>
@@ -83,6 +113,9 @@ const Book = () => {
                 </p>
               </div>
 
+              {isError && <Error errorMessage={isError} />}
+              {isSuccess && <Success successMessage={isSuccess} />}
+
               <div className={`form-group mb-3 ${classes.input_field}`}>
                 <input
                   className="form-control"
@@ -92,6 +125,12 @@ const Book = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
+                {nameError.length > 0 &&
+                  nameError.map((error, index) => (
+                    <ul key={index} className="text-danger">
+                      <li>{error}</li>
+                    </ul>
+                  ))}
               </div>
 
               <div className={`form-group mb-3 ${classes.input_field}`}>
@@ -134,6 +173,23 @@ const Book = () => {
               </div>
 
               <div className={`form-group mb-3 ${classes.input_field}`}>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="location"
+                  placeholder="location"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+                {locationError.length > 0 &&
+                  locationError.map((error, index) => (
+                    <ul key={index} className="text-danger">
+                      <li>{error}</li>
+                    </ul>
+                  ))}
+              </div>
+
+              <div className={`form-group mb-3 ${classes.input_field}`}>
                 <select
                   className="form-control"
                   name="event-type"
@@ -145,8 +201,8 @@ const Book = () => {
                   <option value="birthday">Birthday</option>
                   <option value="corporate">Corporate</option>
                   <option value="concert">Concert</option>
-                  <option value="private">Private Event</option>
-                  <option value="public">Public Event</option>
+                  <option value="private-event">Private Event</option>
+                  <option value="public-event">Public Event</option>
                   <option value="festival">Festival</option>
                   <option value="conference">Conference</option>
                   <option value="seminar">Seminar</option>
@@ -160,7 +216,7 @@ const Book = () => {
                 <input
                   type="submit"
                   className={` form-control ${classes.book_btn1}`}
-                  value="Submit"
+                  value={isLoading ? "Submitting" : "Submit"}
                 />
               </div>
             </div>

@@ -10,9 +10,6 @@ const Loader = () => {
         className={classes.loader_logo}
         style={{ backgroundColor: "#000", borderRadius: "50%" }}
       />
-      <span className={classes.loader_text}>
-        Nigerian Finest Mc with Dexterity
-      </span>
     </div>
   );
 };
