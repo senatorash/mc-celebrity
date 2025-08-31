@@ -1,20 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #026dfd;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +9,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -31,22 +18,8 @@ body {
   margin-top: 0;
   background-color: #ededee !important;
   color: #ededee !important;
-  /* background-color: ; */
   overflow-x: hidden !important;
-  /* overflow-y: scroll !important; */
 }
-
-/* body::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(23, 29, 34, 0.8);
-  opacity: 0.8;
-} */
 
 body a {
   text-decoration: none;
@@ -54,50 +27,66 @@ body a {
 }
 
 /* navbar styling */
-/* =========================
-   Navbar Base Styles
-========================= */
 nav.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* updated */
   align-items: center;
-  padding: 1rem 0;
+  padding: 1rem;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 90px;
   z-index: 999;
-  transition: top 0.7s ease-in-out;
+  transition: top all 0.7s;
+  overflow: hidden;
 }
 
 .navbar.sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 99;
   background: #fff;
-  animation: fadeInDown 1000ms ease-in-out;
+  -webkit-animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
+  -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
   box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
 }
 
-/* Animation */
-@keyframes fadeInDown {
+@-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
+    -webkit-transform: translateY(-20px);
     transform: translateY(-20px);
   }
+
   100% {
     opacity: 1;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 
-/* Logo */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 .navbar .logo {
   max-width: 150px;
 }
-
 .navbar-brand img {
   width: 60px;
   height: auto;
@@ -107,9 +96,6 @@ nav.navbar {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* =========================
-   Menu Links
-========================= */
 .navbar .navbar-menu {
   display: flex;
   justify-content: center;
@@ -117,25 +103,24 @@ nav.navbar {
   list-style-type: none;
 }
 
-/* Sidebar Mode */
+/* Sidebar menu */
 .navbar-menu.sidebar {
-  position: fixed; /* fixed so it covers viewport */
+  position: fixed;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 100%;
   height: 100vh;
   background: #171d22;
-  z-index: 9999; /* above navbar */
+  z-index: 9999;
   flex-direction: column;
-  transition: left 0.7s ease-in-out;
-  overflow-y: auto; /* scroll if content too long */
+  transform: translateX(100%); /* hides it offscreen */
+  transition: transform 0.5s ease-in-out;
 }
 
 .navbar-menu.sidebar.show {
-  left: 0;
+  transform: translateX(0);
 }
 
-/* Close Button */
 .navbar-menu.sidebar .close-btn {
   position: absolute;
   top: 1.8rem;
@@ -149,7 +134,8 @@ nav.navbar {
   align-items: center;
   color: #fff;
   font-size: 2rem;
-  transition: all 0.5s;
+  transition: all 0.3s;
+  overflow: hidden;
 }
 
 .navbar-menu.sidebar .close-btn:hover {
@@ -157,7 +143,6 @@ nav.navbar {
   color: #171d22;
 }
 
-/* Navbar Links */
 .navbar-menu .navbar-link {
   cursor: pointer;
   text-decoration: none;
@@ -172,24 +157,6 @@ nav.navbar {
   background-color: transparent;
 }
 
-.navbar-menu.sidebar .navbar-item {
-  width: 100%;
-  text-align: center;
-}
-
-.navbar-menu.sidebar .navbar-link {
-  width: 100%;
-  font-size: 1.4rem;
-  margin: 0 0 1rem;
-  padding: 0.5rem 1rem;
-}
-
-.navbar-menu .navbar-link:hover,
-.navbar-menu .navbar-link.active {
-  color: #026dfd !important;
-}
-
-/* Favourites Badge */
 .navbar-menu .navbar-link.favourites .num {
   position: absolute;
   top: -0.5rem;
@@ -209,14 +176,28 @@ nav.navbar {
   transition: all 0.5s;
 }
 
+.navbar-menu.sidebar .navbar-item {
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-menu.sidebar .navbar-link {
+  width: 100%;
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-menu .navbar-link:hover,
+.navbar-menu .navbar-link.active {
+  color: #026dfd !important;
+}
+
 .navbar-menu.sidebar .navbar-link.favourites .num {
   position: relative;
   transform: translateY(5px);
 }
 
-/* =========================
-   Right-side Buttons
-========================= */
 .navbar .right-btns .btn {
   margin: 0 1rem 0 0;
   font-size: 2rem;
@@ -237,26 +218,22 @@ nav.navbar {
   background-color: #026dfd;
 }
 
-/* navbar ends */
-
+/* scrollbar */
 body::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
 
-/* Track */
 body::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
 }
 
-/* Thumb (the draggable part) */
 body::-webkit-scrollbar-thumb {
   background: #026dfd;
   border-radius: 10px;
 }
 
-/* On hover */
 body::-webkit-scrollbar-thumb:hover {
   background: #026dfd;
 }
