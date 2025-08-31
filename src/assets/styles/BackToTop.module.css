@@ -20,8 +20,8 @@
   height: 44px;
   text-align: center;
   line-height: 1;
-  left: 0;
-  bottom: 0;
+  right: 15px;
+  bottom: 15px;
   z-index: 9;
   background-color: #026dfd;
   border-color: #fff;

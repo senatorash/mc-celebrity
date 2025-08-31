@@ -89,7 +89,7 @@ const Book = () => {
         className={`container-fluid vh-100 text-black ${classes.book_section}`}
       >
         <form
-          style={{ marginTop: "100px", justifyContent: "center" }}
+          style={{ justifyContent: "center" }}
           className="container"
           onSubmit={handleSubmit}
         >
