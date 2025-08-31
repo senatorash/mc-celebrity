@@ -21,14 +21,12 @@ const Cta = () => {
           </p>
 
           <div className="m-5">
-            <Link to="" className={`${classes.FooterButton}`}>
+            <Link to="/book" className={`${classes.FooterButton}`}>
               Book Me{" "}
               <span>
                 <i className="ri-arrow-right-line ms-2"></i>
               </span>
             </Link>
-
-            <Link to=""></Link>
           </div>
         </div>
         <hr />
@@ -38,11 +36,3 @@ const Cta = () => {
 };
 
 export default Cta;
-
-// Seasoned. Nimble. Always Ready.
-
-// Paragraph:
-// Whether it’s a grand wedding, corporate gala, or a kid’s birthday party — I bring the perfect blend of professionalism and charm to every stage. As your Master of Ceremonies, I keep the crowd engaged, the energy high, and the event running smoothly.
-
-// CTA Button:
-// 👉 Book Me for Your Event

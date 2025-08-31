@@ -55,6 +55,7 @@ const Book = () => {
     const result = await FormSubmit(formData);
     if (result?.success) {
       setIsSuccess(result.message);
+      setIsError("");
       resetForm();
       setIsLoading(false);
     } else {
@@ -85,9 +86,7 @@ const Book = () => {
         ogUrl=""
         ogImage=""
       />
-      <section
-        className={`container-fluid vh-100 text-black ${classes.book_section}`}
-      >
+      <section className={`container-fluid text-black ${classes.book_section}`}>
         <form
           style={{ justifyContent: "center" }}
           className="container"
@@ -127,7 +126,11 @@ const Book = () => {
                 />
                 {nameError.length > 0 &&
                   nameError.map((error, index) => (
-                    <ul key={index} className="text-danger">
+                    <ul
+                      key={index}
+                      className="text-danger text-start"
+                      style={{ fontSize: "10px" }}
+                    >
                       <li>{error}</li>
                     </ul>
                   ))}
@@ -149,7 +152,11 @@ const Book = () => {
                 />
                 {phoneNumberError.length > 0 &&
                   phoneNumberError.map((error, index) => (
-                    <ul key={index} className="text-danger">
+                    <ul
+                      key={index}
+                      className="text-danger text-start"
+                      style={{ fontSize: "10px" }}
+                    >
                       <li>{error}</li>
                     </ul>
                   ))}
@@ -166,7 +173,11 @@ const Book = () => {
                 />
                 {emailError.length > 0 &&
                   emailError.map((error, index) => (
-                    <ul key={index} className="text-danger">
+                    <ul
+                      key={index}
+                      className="text-danger text-start"
+                      style={{ fontSize: "10px" }}
+                    >
                       <li>{error}</li>
                     </ul>
                   ))}
@@ -183,7 +194,11 @@ const Book = () => {
                 />
                 {locationError.length > 0 &&
                   locationError.map((error, index) => (
-                    <ul key={index} className="text-danger">
+                    <ul
+                      key={index}
+                      className="text-danger text-start"
+                      style={{ fontSize: "10px" }}
+                    >
                       <li>{error}</li>
                     </ul>
                   ))}

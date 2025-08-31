@@ -4,7 +4,11 @@ interface SuccessProps {
 
 const Success = ({ successMessage }: SuccessProps) => {
   return (
-    <div className="alert alert-success mt-5 text-center" role="alert">
+    <div
+      className="alert alert-success text-center"
+      role="alert"
+      style={{ fontSize: "14px" }}
+    >
       {successMessage}
     </div>
   );

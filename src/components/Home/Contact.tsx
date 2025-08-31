@@ -174,7 +174,11 @@ const Contact = () => {
                   />
                   {nameError.length > 0 &&
                     nameError.map((error, index) => (
-                      <ul key={index} className="text-danger">
+                      <ul
+                        key={index}
+                        className="text-danger text-start"
+                        style={{ fontSize: "10px" }}
+                      >
                         <li>{error}</li>
                       </ul>
                     ))}
@@ -190,7 +194,11 @@ const Contact = () => {
                   />
                   {emailError.length > 0 &&
                     emailError.map((error, index) => (
-                      <ul key={index} className="text-danger">
+                      <ul
+                        key={index}
+                        className="text-danger text-start"
+                        style={{ fontSize: "10px" }}
+                      >
                         <li>{error}</li>
                       </ul>
                     ))}
@@ -212,7 +220,11 @@ const Contact = () => {
                   />
                   {phoneNumberError.length > 0 &&
                     phoneNumberError.map((error, index) => (
-                      <ul key={index} className="text-danger">
+                      <ul
+                        key={index}
+                        className="text-danger text-start"
+                        style={{ fontSize: "10px" }}
+                      >
                         <li>{error}</li>
                       </ul>
                     ))}
@@ -229,7 +241,11 @@ const Contact = () => {
                   />
                   {locationError.length > 0 &&
                     locationError.map((error, index) => (
-                      <ul key={index} className="text-danger">
+                      <ul
+                        key={index}
+                        className="text-danger text-start"
+                        style={{ fontSize: "10px" }}
+                      >
                         <li>{error}</li>
                       </ul>
                     ))}
@@ -245,7 +261,11 @@ const Contact = () => {
                   />
                   {eventTypeError.length > 0 &&
                     eventTypeError.map((error, index) => (
-                      <ul key={index} className="text-danger">
+                      <ul
+                        key={index}
+                        className="text-danger text-start"
+                        style={{ fontSize: "10px" }}
+                      >
                         <li>{error}</li>
                       </ul>
                     ))}
@@ -261,7 +281,11 @@ const Contact = () => {
                   ></textarea>
                   {textAreaError.length > 0 &&
                     textAreaError.map((error, index) => (
-                      <ul key={index} className="text-danger">
+                      <ul
+                        key={index}
+                        className="text-danger text-start"
+                        style={{ fontSize: "10px" }}
+                      >
                         <li>{error}</li>
                       </ul>
                     ))}

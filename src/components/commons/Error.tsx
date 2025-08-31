@@ -4,7 +4,11 @@ interface ErrorProps {
 
 const Error = ({ errorMessage }: ErrorProps) => {
   return (
-    <div className="alert alert-danger mt-5 text-center" role="alert">
+    <div
+      className="alert alert-danger text-center"
+      role="alert"
+      style={{ fontSize: "14px" }}
+    >
       {errorMessage}
     </div>
   );
