@@ -3,7 +3,6 @@
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../images/IMG_4709.JPG) no-repeat center center fixed;
   background-size: cover;
-  width: 100%;
   min-height: 115vh;
   align-items: center;
   display: flex;

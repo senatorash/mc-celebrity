@@ -10,11 +10,11 @@ const HeroSection = () => {
         {/* <div className="row"> */}
         {/* <div className=""> */}
         <div className={classes.HeroContent}>
-          <span className={classes.name}>MC CELEBRITY</span>
+          {/* <span className={classes.name}>MC CELEBRITY</span> */}
           <h1>
             Your Event, <span className={classes.hero_text}>My Stage</span>
           </h1>
-          <h4>Best Master of Ceremony in Nigeria || Top Emcee in Nigeria</h4>
+          <h4>MC Celebrity || Best MC in Nigeria</h4>
           <div className={classes.HeroTyping}>
             <HeroTyping />
           </div>

@@ -28,7 +28,7 @@ const NavBar = () => {
 
   const handleScroll = () => {
     if (window.scrollY > 245) {
-      // setSticky(true);
+      setSticky(true);
       const btnElement = document.querySelector(".navbar .right-btns .btn ");
       const linkElements = document.querySelectorAll(
         ".navbar-menu .navbar-link"
