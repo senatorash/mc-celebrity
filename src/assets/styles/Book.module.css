@@ -10,11 +10,11 @@
   display: flex;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .book_section {
-    height: 130vh;
+    height: 100vh;
   }
-} */
+}
 
 .formContainer {
   width: 100%;
