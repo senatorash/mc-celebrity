@@ -1,7 +1,7 @@
 import { Element } from "react-scroll";
 import { Link } from "react-router-dom";
 import classes from "../../assets/styles/About.module.css";
-import AboutImg from "../../assets/images/IMG_3287.jpg";
+
 import Animation from "../UI/Animation";
 const About = () => {
   return (
@@ -13,7 +13,7 @@ const About = () => {
             <div className="col-lg-6 p-0">
               <Animation direction="bottom">
                 <div className={classes.AboutImageWrapper}>
-                  <img src={AboutImg} alt="" loading="lazy" />
+                  <img src="/IMG_3287.JPG" alt="mc-celebrity" loading="lazy" />
                 </div>
               </Animation>
             </div>
